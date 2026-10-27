@@ -1,0 +1,1114 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shekh Sadil | Data Science Portfolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --pink: #ff5ca8;
+    --purple: #9b6dff;
+    --cyan: #70e1f5;
+    --white: #ffffff;
+    --text: #e9e7f5;
+    --muted: #aaa9c4;
+    --glass: rgba(255, 255, 255, 0.07);
+    --border: rgba(255, 255, 255, 0.14);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0b0b16;
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+section {
+    padding: 100px 0;
+    scroll-margin-top: 90px;
+}
+
+/* BACKGROUND */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 10% 10%, #30204d 0%, transparent 40%),
+        radial-gradient(ellipse at 90% 30%, #25204e 0%, transparent 38%),
+        linear-gradient(135deg, #0b0b16, #111022, #0b0b16);
+}
+
+.orb {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.35;
+    animation: float 9s ease-in-out infinite alternate;
+}
+
+.orb.one {
+    background: var(--pink);
+    top: 10%;
+    left: -120px;
+}
+
+.orb.two {
+    background: var(--purple);
+    top: 55%;
+    right: -120px;
+    animation-delay: 2s;
+}
+
+.orb.three {
+    background: #345eea;
+    bottom: -150px;
+    left: 35%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(50px, -40px) scale(1.2); }
+}
+
+/* GLASS EFFECT */
+
+.glass {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.2);
+}
+
+.pink {
+    color: var(--pink);
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--pink), var(--purple), var(--cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* NAVBAR */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11, 11, 22, 0.65);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--pink);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+nav ul a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    transition: 0.3s;
+}
+
+nav ul a:hover {
+    color: var(--pink);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 92, 168, 0.35);
+    background: rgba(255, 92, 168, 0.08);
+    color: #ff8fc2;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 18px;
+}
+
+.hero h3 {
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    color: var(--muted);
+    max-width: 600px;
+    font-size: 15px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 23px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    color: white;
+    background: linear-gradient(100deg, #ff5ca8, #9865ff);
+    box-shadow: 0 5px 25px rgba(180, 76, 255, 0.22);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 35px rgba(180, 76, 255, 0.4);
+}
+
+.btn-outline {
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.btn-outline:hover {
+    border-color: var(--pink);
+    color: var(--pink);
+    transform: translateY(-3px);
+}
+
+.profile-card {
+    position: relative;
+    padding: 40px 25px;
+    border-radius: 28px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.profile-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 92, 168, 0.5);
+}
+
+.avatar {
+    width: 145px;
+    height: 145px;
+    margin: 0 auto 25px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 48px;
+    font-weight: 800;
+    color: white;
+    background: linear-gradient(135deg, #ff5ca8, #8d5bff);
+    border: 6px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 45px rgba(255, 92, 168, 0.28);
+}
+
+.profile-card h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.profile-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.profile-tag {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--border);
+}
+
+/* SECTION HEADINGS */
+
+.heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.eyebrow {
+    color: var(--pink);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.heading h2 {
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.heading > p:last-child {
+    color: var(--muted);
+    margin-top: 14px;
+    font-size: 14px;
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.about-card {
+    padding: 30px;
+    border-radius: 20px;
+    transition: 0.35s;
+}
+
+.about-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(255, 92, 168, 0.45);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.number {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    font-weight: 700;
+    color: var(--pink);
+    background: rgba(255, 92, 168, 0.12);
+    border: 1px solid rgba(255, 92, 168, 0.2);
+}
+
+.about-card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* SKILLS */
+
+.skills-section {
+    background: rgba(255, 255, 255, 0.025);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    padding: 25px;
+    border-radius: 18px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(155, 109, 255, 0.5);
+}
+
+.skill-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.skill-top h3 {
+    font-size: 17px;
+}
+
+.tag {
+    padding: 4px 11px;
+    border-radius: 20px;
+    color: #d3baff;
+    background: rgba(155, 109, 255, 0.13);
+    font-size: 11px;
+}
+
+.skill-card p {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 12px 0 17px;
+}
+
+.bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--pink), var(--purple));
+}
+
+/* EDUCATION */
+
+.timeline {
+    max-width: 850px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    bottom: 15px;
+    width: 2px;
+    background: linear-gradient(var(--pink), var(--purple), var(--cyan));
+}
+
+.timeline-item {
+    position: relative;
+    padding: 0 0 30px 55px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.dot {
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--pink);
+    box-shadow: 0 0 18px rgba(255, 92, 168, 0.65);
+}
+
+.timeline-content {
+    padding: 25px;
+    border-radius: 18px;
+    transition: 0.3s;
+}
+
+.timeline-content:hover {
+    border-color: rgba(155, 109, 255, 0.5);
+    transform: translateX(5px);
+}
+
+.date {
+    font-size: 12px;
+    color: var(--pink);
+    font-weight: 600;
+}
+
+.timeline-content h3 {
+    font-size: 19px;
+    margin: 8px 0;
+}
+
+.timeline-content h4 {
+    font-size: 13px;
+    color: #c4b1ff;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* PROJECTS */
+
+.projects-section {
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    padding: 28px;
+    border-radius: 20px;
+    transition: 0.35s;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 92, 168, 0.5);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+}
+
+.project-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--pink);
+    font-weight: 600;
+}
+
+.project-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    font-size: 28px;
+    margin: 20px 0;
+    background: rgba(155, 109, 255, 0.13);
+    border: 1px solid rgba(155, 109, 255, 0.2);
+}
+
+.project-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 20px 0;
+}
+
+.chips span {
+    padding: 5px 9px;
+    font-size: 10px;
+    color: #e3cfff;
+    border-radius: 6px;
+    background: rgba(155, 109, 255, 0.12);
+}
+
+.project-link {
+    color: var(--pink);
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.contact-info,
+.thank-card {
+    padding: 35px;
+    border-radius: 22px;
+}
+
+.contact-info h3,
+.thank-card h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.contact-info > p,
+.thank-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.contact-detail {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-detail:last-child {
+    border-bottom: none;
+}
+
+.contact-detail strong {
+    display: block;
+    color: var(--pink);
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.contact-detail span,
+.contact-detail a {
+    color: var(--muted);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.contact-detail a:hover {
+    color: var(--pink);
+}
+
+.thank-card {
+    background:
+        radial-gradient(circle at top right, rgba(155, 109, 255, 0.25), transparent 55%),
+        rgba(255, 255, 255, 0.05);
+}
+
+.thank-card .btn {
+    align-self: flex-start;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 25px 15px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.025);
+    color: var(--muted);
+    font-size: 12px;
+}
+
+footer span {
+    color: var(--pink);
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 0;
+    }
+
+    nav ul {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 20px;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    nav ul a {
+        white-space: nowrap;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .profile-card {
+        max-width: 450px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .about-grid,
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 70px 0;
+    }
+
+    .hero {
+        padding: 65px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .about-grid,
+    .skills-grid,
+    .projects-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .heading {
+        margin-bottom: 35px;
+    }
+
+    .contact-info,
+    .thank-card {
+        padding: 25px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+</div>
+
+<header>
+    <nav class="container">
+        <a href="#home" class="logo">Shekh <span>Sadil.</span></a>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+    <div class="container hero-grid">
+
+        <div>
+            <span class="badge">WELCOME TO MY DIGITAL SPACE</span>
+
+            <h1>Hi, I'm <span class="gradient-text">Shekh Sadil</span></h1>
+
+            <h3>B.Sc. <span class="pink">Data Science</span> Student</h3>
+
+            <p class="hero-text">
+                I am passionate about data, technology, and discovering
+                meaningful insights from information. I enjoy learning
+                new tools and building projects that solve real-world problems.
+                My journey is focused on developing technical skills
+                and exploring the future of data science.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">Explore My Work ↗</a>
+                <a href="#contact" class="btn btn-outline">Let's Connect</a>
+            </div>
+        </div>
+
+        <div class="profile-card glass">
+            <div class="avatar">SS</div>
+            <h3>Shekh Sadil</h3>
+            <p>Data Science Student</p>
+            <div class="profile-tag">✦ Learn · Analyze · Innovate</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+    <div class="container">
+
+        <div class="heading">
+            <p class="eyebrow">A LITTLE ABOUT ME</p>
+            <h2>Get to Know <span class="gradient-text">Me</span></h2>
+            <p>My interests, background, and future ambitions.</p>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-card glass">
+                <div class="number">01</div>
+                <h3>Who Am I?</h3>
+                <p>
+                    My name is Shekh Sadil. I am a B.Sc. Data Science
+                    student interested in programming, data analysis,
+                    and modern technology.
+                </p>
+            </div>
+
+            <div class="about-card glass">
+                <div class="number">02</div>
+                <h3>My Interests</h3>
+                <p>
+                    My interests include Python, statistics, data
+                    visualization, databases, and machine learning.
+                    I enjoy learning new technologies.
+                </p>
+            </div>
+
+            <div class="about-card glass">
+                <div class="number">03</div>
+                <h3>My Career Goal</h3>
+                <p>
+                    My goal is to become a skilled data professional
+                    and use data-driven insights to understand
+                    and solve practical problems.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+
+<section class="skills-section" id="skills">
+    <div class="container">
+
+        <div class="heading">
+            <p class="eyebrow">WHAT I AM LEARNING</p>
+            <h2>My Technical <span class="gradient-text">Skills</span></h2>
+            <p>Technologies and abilities I am developing.</p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card glass">
+                <div class="skill-top">
+                    <h3>Python</h3>
+                    <span class="tag">Learning</span>
+                </div>
+                <p>Programming fundamentals and basic data analysis.</p>
+                <div class="bar"><span style="width:58%"></span></div>
+            </div>
+
+            <div class="skill-card glass">
+                <div class="skill-top">
+                    <h3>SQL</h3>
+                    <span class="tag">Learning</span>
+                </div>
+                <p>Database queries and data management.</p>
+                <div class="bar"><span style="width:55%"></span></div>
+            </div>
+
+            <div class="skill-card glass">
+                <div class="skill-top">
+                    <h3>HTML & CSS</h3>
+                    <span class="tag">Learning</span>
+                </div>
+                <p>Website development and responsive layouts.</p>
+                <div class="bar"><span style="width:76%"></span></div>
+            </div>
+
+            <div class="skill-card glass">
+                <div class="skill-top">
+                    <h3>Statistics</h3>
+                    <span class="tag">Learning</span>
+                </div>
+                <p>Statistical concepts and data interpretation.</p>
+                <div class="bar"><span style="width:61%"></span></div>
+            </div>
+
+            <div class="skill-card glass">
+                <div class="skill-top">
+                    <h3>Microsoft Excel</h3>
+                    <span class="tag">Learning</span>
+                </div>
+                <p>Formulas, spreadsheets, and data organization.</p>
+                <div class="bar"><span style="width:65%"></span></div>
+            </div>
+
+            <div class="skill-card glass">
+                <div class="skill-top">
+                    <h3>Communication</h3>
+                    <span class="tag">Personal</span>
+                </div>
+                <p>Teamwork, presentation, and problem-solving.</p>
+                <div class="bar"><span style="width:78%"></span></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+    <div class="container">
+
+        <div class="heading">
+            <p class="eyebrow">MY ACADEMIC JOURNEY</p>
+            <h2>My <span class="gradient-text">Education</span></h2>
+            <p>The educational path that brought me here.</p>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <span class="dot"></span>
+                <div class="timeline-content glass">
+                    <p class="date">2026 – Present</p>
+                    <h3>Bachelor of Science in Data Science</h3>
+                    <h4>Silver Oak College of Computer Application</h4>
+                    <p>
+                        Studying programming, mathematics, statistics,
+                        data analysis, databases, and related subjects.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <span class="dot"></span>
+                <div class="timeline-content glass">
+                    <p class="date">Completed</p>
+                    <h3>Higher Secondary Education (12th)</h3>
+                    <h4>National Institute of Open Schooling (NIOS)</h4>
+                    <p>
+                        Completed higher secondary education and
+                        developed a foundation for further studies.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <span class="dot"></span>
+                <div class="timeline-content glass">
+                    <p class="date">Completed</p>
+                    <h3>Secondary Education (10th)</h3>
+                    <h4>Gujarat Board</h4>
+                    <p>
+                        Completed secondary education and built
+                        a foundation in core academic subjects.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+
+<section class="projects-section" id="projects">
+    <div class="container">
+
+        <div class="heading">
+            <p class="eyebrow">THINGS I AM BUILDING</p>
+            <h2>Featured <span class="gradient-text">Projects</span></h2>
+            <p>Practice projects related to my academic journey.</p>
+        </div>
+
+        <div class="projects-grid">
+
+            <div class="project-card glass">
+                <p class="project-label">PROJECT 01</p>
+                <div class="project-icon">📊</div>
+                <h3>Student Performance Analysis</h3>
+                <p>
+                    Analyze sample student marks and study patterns
+                    to understand performance trends and identify
+                    areas for improvement.
+                </p>
+                <div class="chips">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>Statistics</span>
+                </div>
+                <a href="#contact" class="project-link">Learn More ↗</a>
+            </div>
+
+            <div class="project-card glass">
+                <p class="project-label">PROJECT 02</p>
+                <div class="project-icon">📈</div>
+                <h3>Sales Data Analysis</h3>
+                <p>
+                    Explore sample sales data to compare monthly
+                    revenue, identify popular products, and present
+                    useful business insights.
+                </p>
+                <div class="chips">
+                    <span>Excel</span>
+                    <span>Python</span>
+                    <span>Charts</span>
+                </div>
+                <a href="#contact" class="project-link">Learn More ↗</a>
+            </div>
+
+            <div class="project-card glass">
+                <p class="project-label">PROJECT 03</p>
+                <div class="project-icon">💻</div>
+                <h3>Personal Portfolio Website</h3>
+                <p>
+                    A personal website showcasing my education,
+                    skills, projects, and interests using HTML and CSS.
+                </p>
+                <div class="chips">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Web Design</span>
+                </div>
+                <a href="#home" class="project-link">Back to Home ↗</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+    <div class="container">
+
+        <div class="heading">
+            <p class="eyebrow">LET'S CONNECT</p>
+            <h2>Contact <span class="gradient-text">Me</span></h2>
+            <p>Let's connect to discuss technology and future projects.</p>
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-info glass">
+                <h3>Get in Touch ✦</h3>
+                <p>
+                    I look forward to connecting with people
+                    interested in data science and technology.
+                </p>
+
+                <div class="contact-detail">
+                    <strong>Name</strong>
+                    <span>Shekh Sadil</span>
+                </div>
+
+                <div class="contact-detail">
+                    <strong>Email</strong>
+                    <a href="mailto:your.email@example.com">
+                        your.email@example.com
+                    </a>
+                </div>
+
+                <div class="contact-detail">
+                    <strong>LinkedIn</strong>
+                    <a href="https://www.linkedin.com/" target="_blank">
+                        Visit LinkedIn ↗
+                    </a>
+                </div>
+            </div>
+
+            <div class="thank-card glass">
+                <h3>Thanks for Visiting!</h3>
+                <p>
+                    Every expert starts as a beginner.
+                    I am continuously learning, experimenting,
+                    and improving my skills to build a better future
+                    in data science.
+                </p>
+                <a href="#home" class="btn btn-primary">Back to Top ↑</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>Designed with passion by <span>Shekh Sadil</span> | © 2026</p>
+    <p>Learning today · Building tomorrow</p>
+</footer>
+
+</body>
+</html>
+```
